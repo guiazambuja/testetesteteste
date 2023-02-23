@@ -1,0 +1,5 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define NETVAR(type, name, table, netvar) type& name##() const { static int _##name = g_pNetvars->GetOffset(table, netvar); return *(type*)((uintptr_t)this + _##name); }
+#define TIME_TO_TICKS(dt) ( (int)( 0.5 + (float)(dt) / g_pGlobalVars->intervalPerTick ) )
